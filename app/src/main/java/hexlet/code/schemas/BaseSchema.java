@@ -6,11 +6,11 @@ import java.util.function.Predicate;
 
 public abstract class BaseSchema<T> {
     private Map<String, Predicate<T>> validations = new HashMap<>();
-    protected void addValidation(String key, Predicate<T> validation) {
+    protected final void addValidation(String key, Predicate<T> validation) {
         this.validations.put(key, validation);
     }
 
-    public boolean isValid(T data) {
+    public final boolean isValid(T data) {
         if (data == null) {
             return !validations.containsKey("required");
         }
