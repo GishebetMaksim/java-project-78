@@ -1,7 +1,5 @@
 package hexlet.code.schemas;
 
-import java.util.Objects;
-
 public class StringSchema extends BaseSchema<String> {
 
     public StringSchema required() {
