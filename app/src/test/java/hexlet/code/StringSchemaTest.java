@@ -27,6 +27,7 @@ public class StringSchemaTest {
     public void requiredTest() {
         schema.required();
         assertFalse(schema.isValid(null));
+        assertFalse(schema.isValid(""));
         assertTrue(schema.isValid("Hello"));
     }
 
@@ -44,7 +45,6 @@ public class StringSchemaTest {
         assertTrue(schema.isValid(null));
         assertFalse(schema.isValid("Hello, World!"));
         assertTrue(schema.isValid("Hi, World!"));
-
     }
 
     @Test

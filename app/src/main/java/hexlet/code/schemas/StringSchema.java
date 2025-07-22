@@ -5,7 +5,7 @@ import java.util.Objects;
 public class StringSchema extends BaseSchema<String> {
 
     public StringSchema required() {
-        addValidation("required", Objects::nonNull);
+        addValidation("required", string -> string != null && !string.isEmpty());
         return this;
     }
 
