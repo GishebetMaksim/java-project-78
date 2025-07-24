@@ -25,6 +25,11 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.jacocoTestReport {
+    reports { xml.required.set(true)
+    }
+}
+
 sonar {
     properties {
         property("sonar.projectKey", "GishebetMaksim_java-project-78")
