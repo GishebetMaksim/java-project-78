@@ -22,7 +22,7 @@ jobs:
         run: ./gradlew build
         working-directory: app
       - name: Generate coverage report
-        run: make report
+        run: ./gradlew jacocoTestReport
         working-directory: app
       - name: Cache SonarQube packages
         uses: actions/cache@v4
