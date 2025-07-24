@@ -1,6 +1,7 @@
 plugins {
     application
     checkstyle
+    id("org.sonarqube") version "6.2.0.5505"
 }
 
 application {
@@ -21,4 +22,12 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "GishebetMaksim_java-project-78")
+        property("sonar.organization", "gishebetmaksim")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
